@@ -9,6 +9,8 @@ import java.util.Scanner;
  *
  */
 public class Metodos {
+	private String[][] condicoes;
+
 	/**
 	 * 
 	 * Método reponsavel por partir a string em pedaços e separálos atravéz da
@@ -35,9 +37,49 @@ public class Metodos {
 	public String recebeString() {
 		String inputdoUsuario = null;
 		Scanner input = new Scanner(System.in);
-		inputdoUsuario = input.next();
-		input.close();
+		inputdoUsuario = input.nextLine();
+
 		return inputdoUsuario;
 	}
 
+	// Atulizado dia 29/09
+
+	/**
+	 * Usa os métodos de leitura e seperação de Strings para ler o alfabeto
+	 * inserido pelo usuario e o separar em um vetor, atravéz de virgulas.
+	 * 
+	 * @return um vetor de String contendo o Alfabeto
+	 */
+	public String[] lerVetorString() {
+		String[] vetorString = null;
+		String stringInteiro = recebeString();
+		vetorString = divideString(",", stringInteiro);
+		return vetorString;
+	}
+
+	public void imprimeVetorString(String[] vetor) {
+		for (int i = 0; i < vetor.length; i++) {
+			System.out.println(vetor[i]);
+		}
+	}
+
+	/**
+	 * Joubert: Recebo do usuario os símbolos terminais e as separa dentro de um
+	 * vetor
+	 * 
+	 * @return Vetor contendo os símbolos terminais
+	 */
+
+	public String[][] condicoesTerminais(String[] terminais) {
+		condicoes = null;
+		String condicoesSemQuebra = null;
+		for (int i = 0; i < terminais.length; i++) {
+			condicoesSemQuebra = recebeString();
+			for (int j = 0; j < condicoesSemQuebra.length(); j++)
+				condicoes[i][j] = condicoesSemQuebra.split(",")[j];
+
+		}
+		return condicoes;
+
+	}
 }
