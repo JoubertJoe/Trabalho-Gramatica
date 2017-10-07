@@ -16,6 +16,7 @@ public class Metodos {
 	private ArrayList<String> terminais = new ArrayList<>();
 	private ArrayList<Regra> regra = new ArrayList<Regra>();
 	private ArrayList<String> todaComputacao = new ArrayList<String>();
+	private String palavraVazia;
 	
 	/**
 	 * Chamo as etapas do programa.
@@ -24,6 +25,7 @@ public class Metodos {
 		String novaPalavra = "y";
 		pontoDePartida();
 		caracterTerminais();
+		receberPalavraVazia();
 		separarRegraProducao();
 		do{
 			if(novaPalavra.equals("y")){
@@ -105,7 +107,13 @@ public class Metodos {
 			terminais.add(terminaisSeparadoEmVetor[i]);
 		}
 	}
-	
+	/**
+	 * Recebe um caracter para vazio.
+	 */
+	public void receberPalavraVazia(){
+		System.out.print("Entre com o Caracter para se referir a VAZIO : ");
+		palavraVazia = recebeString();
+	}
 	/**
 	 * Pega a palavra a ser computada
 	 */
@@ -173,6 +181,14 @@ public class Metodos {
 				if(busca)
 					break;
 			}
+			System.out.println(palavraVazia);
+			// Removendo todo caracter VAZIO da palavra.
+			String[] removendo = computandoPalavra.split(palavraVazia);
+			computandoPalavra = "";
+			for (int i = 0; i < removendo.length; i++) {
+				computandoPalavra += removendo[i];
+			}
+			
 			//Verifica se a palavra computada esta toda correta.
 			if(palavra.equals(computandoPalavra)){
 				System.out.println("Palavra computada corretamente");
