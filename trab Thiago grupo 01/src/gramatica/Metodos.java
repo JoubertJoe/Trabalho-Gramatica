@@ -181,7 +181,7 @@ public class Metodos {
 				if(busca)
 					break;
 			}
-			System.out.println(palavraVazia);
+		
 			// Removendo todo caracter VAZIO da palavra.
 			String[] removendo = computandoPalavra.split(palavraVazia);
 			computandoPalavra = "";
