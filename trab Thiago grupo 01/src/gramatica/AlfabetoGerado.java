@@ -1,10 +1,16 @@
 package gramatica;
 /**
- * Class criada para guarda o alfabeto que pode ser gerado por um caracter especifico.
+ * Classe criada para guarda o alfabeto que pode ser gerado por um caracter especifico.
  * Ex : X - abS
  * 		X - a
  * Sendo X o caracter especifico que pode ser substituido por abS ou a para forma a palavra.
- * @author RafaelSene
+ * @author Edimo Divino Silva Júnior
+ * @author Joubert Joe Vieira Lellis
+ * @author Elber Cândido da Silva
+ * @author Laressa Fernanda Vilela Silveira
+ * @author Rafael Sene Alves Penha
+ * @author Roberto Alves Ferreira Filho
+
  *
  */
 public class AlfabetoGerado {
